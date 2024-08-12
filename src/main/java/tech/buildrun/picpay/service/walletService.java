@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import tech.buildrun.picpay.dto.CreateWalletDto;
 import tech.buildrun.picpay.entity.wallet;
+import tech.buildrun.picpay.exception.WalletDataAlreadyExistsExecption;
 import tech.buildrun.picpay.repository.walletRepository;
 
 @Service
@@ -17,7 +18,10 @@ public class walletService {
 
     public wallet createWallet(CreateWalletDto dto) {
         
-        walletRepository.findByCpfCnpjOrEmail(dto.cpfCnpj(), dto.email())
+        var walletDb = walletRepository.findByCpfCnpjOrEmail(dto.cpfCnpj(), dto.email());
+        if (walletDb.isPresent()) {
+            throw new WalletDataAlreadyExistsExecption("CpfCnpj or Email already exists");
+        }
 
         return walletRepository.save(dto.toWallet());
         
