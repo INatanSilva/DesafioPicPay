@@ -1,0 +1,21 @@
+meta {
+  name: Create Wallet
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://localhost:8080/wallets
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "full name": "Natan",
+    "cpfCnpj": "1234",
+    "email": "natan@icloud.com",
+    "password": "43234",
+    "walletType": "USER" 
+  }
+}
