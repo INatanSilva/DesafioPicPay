@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import tech.buildrun.picpay.entity.wallet;
 
-public interface WalletRepository extends JpaRepository<wallet, Long> {
+public interface walletRepository extends JpaRepository<wallet, Long> {
     
 }

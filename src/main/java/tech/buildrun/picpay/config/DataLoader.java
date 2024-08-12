@@ -6,15 +6,15 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
 import tech.buildrun.picpay.entity.walletType;
-import tech.buildrun.picpay.repository.WalletTypeRepository;
+import tech.buildrun.picpay.repository.walletTypeRepository;
 
 @Configuration
 public class DataLoader implements CommandLineRunner {
 
-    private final WalletTypeRepository walletTypeRepository;
+    private final walletTypeRepository walletTypeRepository;
     
 
-    public DataLoader(WalletTypeRepository walletTypeRepository) {
+    public DataLoader(walletTypeRepository walletTypeRepository) {
         this.walletTypeRepository = walletTypeRepository;
     }
 
