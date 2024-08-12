@@ -34,6 +34,15 @@ public class wallet {
     public wallet() {
     }
 
+    public wallet(String fullName, String cpfCnpj, String email, String password,
+            tech.buildrun.picpay.entity.walletType walletType) {
+        this.fullName = fullName;
+        this.cpfCnpj = cpfCnpj;
+        this.email = email;
+        this.password = password;
+        this.walletType = walletType;
+    }
+
     public Long getId() {
         return id;
     }
